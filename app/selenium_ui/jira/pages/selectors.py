@@ -151,3 +151,11 @@ class BoardLocators:
     # Scrum boards
     scrum_board_backlog_content = (By.CSS_SELECTOR, "#ghx-backlog[data-rendered]:not(.browser-metrics-stale)")
     board_columns = (By.CSS_SELECTOR, ".ghx-column")
+
+
+class TeamViewerLocator:
+    #create_session = (By.CLASS_NAME, "aui-button.aui-button-primary")
+   # create_session = (By.LINK_TEXT, "Create session")
+    create_session = (By.XPATH, "//contacts/tv-session/div/div[2]/button")
+    add_comment = (By.ID, "issue-comment-add-submit")
+    close_session = (By.LINK_TEXT, "Close session")
