@@ -6,7 +6,7 @@ import json
 
 from selenium_ui.base_page import BasePage
 from selenium_ui.jira.pages.selectors import UrlManager, LoginPageLocators, DashboardLocators, PopupLocators, \
-    IssueLocators, ProjectLocators, SearchLocators, BoardsListLocators, BoardLocators, LogoutLocators
+    IssueLocators, ProjectLocators, SearchLocators, BoardsListLocators, BoardLocators, LogoutLocators, TeamViewerLocator
 
 
 class PopupManager(BasePage):
@@ -240,3 +240,11 @@ class Board(BasePage):
 
     def wait_for_scrum_board_backlog(self):
         self.wait_until_present(BoardLocators.scrum_board_backlog_content)
+
+
+class TV(BasePage):
+
+    def session_creation(self):
+        self.wait_until_visible(TeamViewerLocator.create_session).click()
+        self.wait_until_visible(TeamViewerLocator.add_comment).click()
+        self.wait_until_visible(TeamViewerLocator.close_session).click()
